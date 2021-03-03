@@ -2,6 +2,7 @@ package com.cursoandroid.organizzeapp.model;
 
 import com.cursoandroid.organizzeapp.config.ConfiguracaoFirebase;
 import com.cursoandroid.organizzeapp.helper.Base64Custom;
+import com.cursoandroid.organizzeapp.helper.DateUtil;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 
@@ -14,15 +15,15 @@ public class Movimentacao {
     public Movimentacao() {
     }
 
-    public void salvar(){
+    public void salvar(String dataEscolhida){
 
         FirebaseAuth autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
         String idUsuario = Base64Custom.codificarBase64(autenticacao.getCurrentUser().getEmail());
 
         DatabaseReference firebase = ConfiguracaoFirebase.getFirebaseDatabase();
         firebase.child("movimentacao")
-                .child(Base64Custom.codificarBase64(idUsuario))
-                .child("032018")
+                .child(idUsuario)
+                .child(DateUtil.mesAnoDataEscolhia(dataEscolhida))
                 .push() //cria um id único
                 .setValue(this);
     }

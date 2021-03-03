@@ -13,4 +13,12 @@ public class DateUtil {
 
     }
 
+    public static String mesAnoDataEscolhia(String data){
+        String retornoData[] = data.split("/");
+        String mes = retornoData[1]; //mes
+        String ano = retornoData[2]; //ano
+
+        return mes+ano;
+    }
+
 }
