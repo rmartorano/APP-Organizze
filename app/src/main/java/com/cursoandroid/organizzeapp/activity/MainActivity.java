@@ -20,7 +20,6 @@ public class MainActivity extends IntroActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setFullscreen(true);
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
 

@@ -10,6 +10,7 @@ public class Movimentacao {
 
     private String data, categoria, descricao, tipo;
     private double valor;
+    private String key;
 
 
     public Movimentacao() {
@@ -34,6 +35,14 @@ public class Movimentacao {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 
     public String getCategoria() {
